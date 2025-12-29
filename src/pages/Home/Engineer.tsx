@@ -10,7 +10,7 @@ const Engineer = () => {
               <img
                 src={item.image}
                 alt={item.name}
-                className=" object-cover drop-shadow-sm bg-white w-[375px] h-[483px]"
+                className=" object-cover drop-shadow-sm bg-white md:w-[375px] md:h-[483px] w-[200px] h-[250px]"
               />
             </div>
 

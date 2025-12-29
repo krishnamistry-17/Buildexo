@@ -13,22 +13,27 @@ export default {
         },
         secondary: "#FFFFFF",
         orange: "#FF6600",
+        red: "#FF0000",
         gray: {
           gray: "#494949",
           lightgray: "#F5F5F5",
           graytext: "#666666",
           graynumber: "#EEF3FF",
+          graysecondary: "#505050",
         },
         blue: {
           lightblue: "#F1F4FB",
+          darkblue: "#0E111A",
+          light: "#172234",
         },
         cream: {
           primary: "#F9F4F4",
         },
         purple: {
           primary: "#140626",
-          secondary:"#371D59",
-          light:"#54357D",
+          secondary: "#200B3A",
+          light: "#301256",
+          lightest: "#54357D",
         },
       },
       screens: {

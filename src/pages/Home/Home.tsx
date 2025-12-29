@@ -1,4 +1,4 @@
-import Herosection from "./Herosection";
+import HomeHeroSection from "./HomeHeroSection";
 import CompanyTab from "./CompanyTab";
 import Card from "./Card";
 import Slider from "./Slider";
@@ -7,12 +7,13 @@ import Engineer from "./Engineer";
 import BlackCard from "./BlackCard";
 import Card1 from "./Card1";
 import RenovationCard from "./RenovationCard";
+import BlueCard from "./BlueCard";
 
 const Home = () => {
   return (
     <>
       <div>
-        <Herosection />
+        <HomeHeroSection />
       </div>
       <div className="flex flex-col justify-center items-center mx-auto w-full">
         <div className=" -mt-16 md:-mt-[60px]">
@@ -23,6 +24,9 @@ const Home = () => {
         </div>
         <div className=" mt-[50px]">
           <Slider />
+        </div>
+        <div className=" w-full">
+          <BlueCard />
         </div>
         <div className=" mt-[50px]  ">
           <Research />

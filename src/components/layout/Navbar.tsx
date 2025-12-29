@@ -48,17 +48,17 @@ const Navbar = () => {
   ];
 
   return (
-    <>
-      <div className=" w-full flex justify-center items-center mx-auto ">
+    <div className={`absolute top-[20px] left-0 w-full z-10`}>
+      <div className=" w-full flex justify-center items-center mx-auto  ">
         <div className=" flex items-stretch">
           {/*logo */}
-          <div className=" flex items-center bg-secondary rounded-[10px] lg:pt-[41px] lg:pb-[36px] px-[28.31px]">
+          <div className=" flex items-center bg-secondary rounded-[10px] xl:pt-[41px] py-[12px] xl:pb-[36px] px-[28.31px]">
             <img src={logo} alt="logo" />
           </div>
           {/*social items */}
           <div className=" flex flex-col">
-            <div className=" flex items-center lg:rounded-tr-[10px] bg-black-blackprimary px-5 py-2">
-              <div className=" lg:flex hidden flex-wrap items-center gap-5">
+            <div className=" xl:flex items-center lg:rounded-tr-[10px] bg-black-blackprimary px-5 xl:py-2">
+              <div className=" xl:flex hidden flex-wrap items-center gap-5">
                 {socialItems.map((item) => (
                   <div className=" flex items-center gap-2" key={item.label}>
                     <img src={item.icon} alt={item.label} />
@@ -80,11 +80,11 @@ const Navbar = () => {
                   </Link>
                 ))}
               </div>
-              <div className=" flex items-center gap-5 py-[21px]">
+              <div className=" flex items-center gap-5 lg:py-0 py-[21px]">
                 <img src={search} alt="search" />
                 <img src={cart} alt="cart" />
-                <div className="lg:flex hidden items-center gap-2 bg-orange py-[19px] px-[30px] rounded-br-[10px]">
-                  <button className=" font-exo-extrabold text-[16px] text-secondary uppercase">
+                <div className="lg:flex hidden items-center gap-2 bg-orange xl:py-[19px] xl:px-[30px] py-[10px] px-[20px] m-2 rounded-br-[10px]">
+                  <button className=" font-exo-extrabold xl:text-[16px] text-[14px] text-secondary uppercase">
                     Get a Quote
                   </button>
                   <img
@@ -100,7 +100,7 @@ const Navbar = () => {
                 </button>
               </div>
               {menuOpen && (
-                <div className=" absolute top-20 right-0 w-[300px] bg-white h-fit bg-black-secondary rounded-[10px] p-[10px] z-10">
+                <div className=" absolute top-20 sm:right-[168px] right-0 w-[250px] bg-white h-fit bg-black-secondary rounded-[10px] p-[10px] z-10">
                   <div className=" flex items-center justify-end">
                     <button onClick={toggleMenu}>
                       <X className=" text-black-secondary" />
@@ -124,7 +124,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

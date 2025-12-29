@@ -14,7 +14,7 @@ const Card1 = () => {
             className=" shadow-md bg-white w-full h-full object-cover"
           />
         </div>
-        <div className="flex flex-col pt-auto gap-[10px] pl-[40px] pr-[10px] w-full">
+        <div className="flex flex-col pt-auto gap-[10px] md:pl-[40px] pl-[20px] md:pr-[10px] pr-[5px] w-full">
           <div>
             {Card1Text.map((item) => (
               <div key={item.number}>

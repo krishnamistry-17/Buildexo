@@ -1,7 +1,8 @@
 import { heroimage } from "../../assets/images";
-import Navbar from "../../components/layout/Navbar";
+// import Navbar from "../../components/layout/Navbar";
+// import NavbarWrapper from "../../components/NavbarWrapper";
 
-const Herosection = () => {
+const HomeHeroSection = () => {
   return (
     <section className="relative h-[90vh] w-full">
       {/* BACKGROUND IMAGE */}
@@ -15,11 +16,11 @@ const Herosection = () => {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* NAVBAR OVER IMAGE */}
-      <div className="absolute top-[20px] left-0 w-full">
+      {/* <NavbarWrapper top="20px">
         <Navbar />
-      </div>
+      </NavbarWrapper> */}
     </section>
   );
 };
 
-export default Herosection;
+export default HomeHeroSection;
