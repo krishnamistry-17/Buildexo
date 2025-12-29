@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@font-face {
+  font-family: "exo-regular";
+  src: url("./assets/fonts/Exo-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "exo-medium";
+  src: url("./assets/fonts/Exo-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "exo-bold";
+  src: url("./assets/fonts/Exo-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "exo-extrabold";
+  src: url("./assets/fonts/Exo-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "exo-semibold";
+  src: url("./assets/fonts/Exo-SemiBold.ttf") format("truetype");
+}
+
+
+.stroke-text {
+  -webkit-text-stroke: 2px #FFFFFF;
+}
