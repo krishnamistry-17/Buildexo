@@ -10,8 +10,11 @@ export default {
           blacksecondary: "#1F1F1F",
           blacktertiary: "#222D39",
           blackquaternary: "#0C0A0A",
+          blackquinary: "#161D39",
+          blackpara: "#1C1D20",
         },
         secondary: "#FFFFFF",
+        tertiary: "#F7F7F7",
         orange: "#FF6600",
         red: "#FF0000",
         gray: {
@@ -20,6 +23,9 @@ export default {
           graytext: "#666666",
           graynumber: "#EEF3FF",
           graysecondary: "#505050",
+          grayborder: "#D3D3D3",
+          graybg: "#F2F2F2",
+          graytabborder: "#E0DDE5",
         },
         blue: {
           lightblue: "#F1F4FB",

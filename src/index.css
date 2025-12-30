@@ -33,3 +33,7 @@
 .stroke-text {
   -webkit-text-stroke: 2px #FFFFFF;
 }
+
+.stroke-gray-grayborder {
+  -webkit-text-stroke: 1px #D3D3D3;
+}

@@ -32,7 +32,7 @@ const AboutCompany = () => {
               className="bg-orange px-8 py-4 font-exo-bold  uppercase text-secondary rounded-[4px] text-[15px]"
               type="button"
             />
-            <div className="flex items-center gap-2 ml-[40px]">
+            <div className="flex items-center gap-2 md:ml-[40px]">
               <img
                 src={call}
                 alt="call"
@@ -49,14 +49,38 @@ const AboutCompany = () => {
             </div>
           </div>
         </div>
-        <div className=" xl:w-[40%]">
-          <div className="sm:w-[400px] sm:h-[400px] w-[300px] h-[300px] bg-orange/10 rounded-[20px] drop-shadow-lg  relative sm:px-0 px-[20px]">
-            <div className="w-full h-full flex items-center justify-center absolute inset-0 -translate-y-6 -translate-x-6">
-              <img
-                src={aboutcompany}
-                alt="aboutcompany"
-                className="w-full h-full object-cover rounded-[20px]"
-              />
+        <div className="xl:w-[40%] flex justify-center md:px-0 px-[10px]">
+          <div className="relative">
+            {/* Background card */}
+            <div className="sm:w-[420px] sm:h-[420px] w-[300px] h-[300px] bg-orange/10 rounded-[20px]" />
+
+            {/* Image card */}
+            <div className="absolute inset-0 -translate-x-6 -translate-y-6">
+              <div className="w-full h-full rounded-[20px] overflow-hidden shadow-lg bg-white">
+                <img
+                  src={aboutcompany}
+                  alt="aboutcompany"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="absolute bottom-[24px] left-[-24px]">
+              <div className="bg-orange xl:px-[20px] md:px-[33px] px-[20px] py-[3px] rounded-bl-[20px] rounded-tr-[20px]">
+                <div className="flex items-center justify-center gap-[7px]">
+                  <p className="xl:text-[70px] md:text-[50px] text-[30px] font-exo-extrabold text-secondary">
+                    25.
+                  </p>
+                  <div className="flex flex-col gap-[0px] pt-[19.5px]">
+                    <p className="md:text-[20px] text-[16px] font-exo-bold text-black-blackquinary line-height-[20px] uppercase ">
+                      Works of
+                    </p>
+                    <p className="xl:text-[40px] md:text-[35px] text-[25px] font-exo-bold text-secondary uppercase -mt-[10px]">
+                      experience
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -64,5 +88,4 @@ const AboutCompany = () => {
     </div>
   );
 };
-
 export default AboutCompany;

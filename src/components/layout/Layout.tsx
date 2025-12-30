@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import MainNav from "./MainNav";
 import NavbarWrapper from "../NavbarWrapper";
 import Navbar from "./Navbar";
+import ScrollWindow from "../ScrollWindow";
 
 const Layout = () => {
   const location = useLocation();
@@ -19,7 +20,9 @@ const Layout = () => {
           <Navbar />
         </NavbarWrapper>
       )}
-      <Outlet />
+      <ScrollWindow>
+        <Outlet />
+      </ScrollWindow>
       <div className="mt-[100px]">
         <Footer />
       </div>

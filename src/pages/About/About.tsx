@@ -1,5 +1,8 @@
 import Herosection from "../../components/HeroSection";
 import AboutCompany from "./AboutCompany";
+import Building from "./Building";
+import WhatDo from "./WhatDo";
+import Card from "./Card";
 
 const About = () => {
   return (
@@ -8,6 +11,15 @@ const About = () => {
       <div className="flex flex-col justify-center items-center mx-auto w-full">
         <div>
           <AboutCompany />
+        </div>
+        <div className="w-full pt-[120px]">
+          <WhatDo />
+        </div>
+        <div className="w-full xl:pt-[145px] pt-[50px]">
+          <Building />
+        </div>
+        <div className=" w-full ">
+          <Card />
         </div>
       </div>
     </>

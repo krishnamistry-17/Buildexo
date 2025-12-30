@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   construction,
   location,
@@ -12,10 +12,13 @@ import {
 
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import PageMenu from "../PageMenu";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [pageMenuOpen, setPageMenuOpen] = useState(false);
 
+  const navigate = useNavigate();
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -40,7 +43,7 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Home", to: "/", icon: downarrow },
-    { label: "Pages", to: "/pages", icon: downarrow },
+    { label: "Pages", to: "/pages", icon: downarrow, pageMenu: true },
     { label: "Services", to: "/services", icon: downarrow },
     { label: "Blog", to: "/blog", icon: downarrow },
     { label: "Shop", to: "/shop", icon: downarrow },
@@ -53,7 +56,7 @@ const Navbar = () => {
         <div className=" flex items-stretch">
           {/*logo */}
           <div className=" flex items-center bg-secondary rounded-[10px] xl:pt-[41px] py-[12px] xl:pb-[36px] px-[28.31px]">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" onClick={() => navigate("/")} />
           </div>
           {/*social items */}
           <div className=" flex flex-col">
@@ -72,12 +75,24 @@ const Navbar = () => {
             <div className="flex items-center gap-[47.24px] bg-black-blackprimary px-10 ">
               <div className=" lg:flex hidden items-center gap-5">
                 {navItems.map((item) => (
-                  <Link to={item.to} className="flex items-center gap-2">
-                    <p className=" text-[17px] font-exo-bold text-secondary">
-                      {item.label}
-                    </p>
-                    <img src={item.icon} alt={item.label} />
-                  </Link>
+                  <div key={item.label} className="relative">
+                    <div
+                      className="flex items-center gap-2 cursor-pointer"
+                      onClick={() =>
+                        item.pageMenu && setPageMenuOpen(!pageMenuOpen)
+                      }
+                    >
+                      <p className=" text-[17px] font-exo-bold text-secondary ">
+                        {item.label}
+                      </p>
+                      <img src={item.icon} alt={item.label} />
+                    </div>
+                    {item.pageMenu && pageMenuOpen && (
+                      <div className="absolute top-full left-0 z-50">
+                        <PageMenu onClose={() => setPageMenuOpen(false)} />
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
               <div className=" flex items-center gap-5 lg:py-0 py-[21px]">

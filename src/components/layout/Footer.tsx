@@ -1,6 +1,9 @@
+import { useLocation } from "react-router-dom";
 import { FooterText } from "../../constance/Text";
 
 const Footer = () => {
+  const location = useLocation();
+  const isNotAbout = location.pathname !== "/about";
   return (
     <div className="bg-gradient-to-r from-purple-primary via-purple-secondary to-purple-light w-full">
       <div className="container mx-auto max-w-[1240px]">
@@ -8,7 +11,12 @@ const Footer = () => {
           <div key={idx}>
             <div className="flex flex-wrap justify-center items-center xl:gap-0 gap-[24px] py-[30px]">
               {item.images.map((image: string, index: number) => (
-                <img key={index} src={image} alt="footer" />
+                <img
+                  key={index}
+                  src={image}
+                  alt="footer"
+                  className={`${isNotAbout ? "block" : "hidden"}`}
+                />
               ))}
             </div>
 

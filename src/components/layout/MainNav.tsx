@@ -11,9 +11,11 @@ import {
 } from "../../assets/svgs";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import PageMenu from "../PageMenu";
 
 const MainNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [pageMenuOpen, setPageMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -37,7 +39,7 @@ const MainNav = () => {
   ];
   const navItems = [
     { label: "Home", to: "/", icon: downarrow },
-    { label: "Pages", to: "/pages", icon: downarrow },
+    { label: "Pages", to: "/pages", icon: downarrow, pageMenu: true },
     { label: "Services", to: "/services", icon: downarrow },
     { label: "Blog", to: "/blog", icon: downarrow },
     { label: "Shop", to: "/shop", icon: downarrow },
@@ -61,7 +63,7 @@ const MainNav = () => {
           ))}
         </div>
       </div>
-      <div className=" w-full flex justify-center items-center mx-auto">
+      <div className=" w-full flex justify-center items-center  mx-auto">
         <div className="flex items-center bg-orange  rounded-l-full relative">
           {/*logo */}
           <div className=" flex items-center bg-white  rounded-l-full rounded-br-full lg:mr-0 mr-5 ">
@@ -75,11 +77,25 @@ const MainNav = () => {
           <div className=" flex items-center gap-5">
             <div className=" lg:flex hidden flex-wrap items-center gap-5 px-[28px] py-[28px]">
               {navItems.map((item) => (
-                <div className=" flex items-center gap-2" key={item.label}>
-                  <p className=" text-[16px] font-exo-regular text-secondary">
-                    {item.label}
-                  </p>
-                  <img src={item.icon} alt={item.label} />
+                <div key={item.label} className="relative">
+                  <div
+                    className="flex items-center gap-2 cursor-pointer"
+                    onClick={() =>
+                      item.pageMenu && setPageMenuOpen(!pageMenuOpen)
+                    }
+                  >
+                    <p className="text-[16px] font-exo-regular text-secondary">
+                      {item.label}
+                    </p>
+                    <img src={item.icon} alt={item.label} />
+                  </div>
+
+                  {/* Page dropdown – opens directly below Pages */}
+                  {item.pageMenu && pageMenuOpen && (
+                    <div className="absolute top-full left-0 z-50">
+                      <PageMenu onClose={() => setPageMenuOpen(false)} />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

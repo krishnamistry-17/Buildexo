@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { herobg } from "../assets/images";
 import { right } from "../assets/svgs";
 
@@ -25,9 +26,12 @@ const Herosection = ({ currentPage, previousPage }: HerosectionProps) => {
             {currentPage}
           </h1>
           <div className="flex items-center gap-[10px] pt-[10px]">
-            <p className="text-secondary text-[17px] font-exo-regular">
+            <Link
+              to="/"
+              className="text-secondary text-[17px] font-exo-regular"
+            >
               {previousPage}
-            </p>
+            </Link>
             <img src={right} alt="right" />
             <p className="text-secondary text-[17px] font-exo-regular">
               {currentPage}
