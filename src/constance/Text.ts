@@ -30,6 +30,14 @@ import {
   team4,
   team5,
   team6,
+  left,
+  right,
+  avatar1,
+  avatar2,
+  avatar3,
+  avatar5,
+  avatar4,
+  careerbg,
 } from "../assets/images";
 import {
   call,
@@ -40,12 +48,20 @@ import {
   linkedin,
   linkedinorange,
   listitem,
+  location,
   locationwhite,
   logowhite,
   payment,
+  calander,
   scicon,
   skype,
   youtube,
+  price,
+  age,
+  gender,
+  experience,
+  job,
+  hours,
 } from "../assets/svgs";
 export const HeroText = {
   para: " Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.",
@@ -395,4 +411,243 @@ export const OurTeamText = {
         "Integer iaculis ultrices velit nec tempor. Pellentesque aliquet est massa, sit amet tempor mi auctor nec. Mauris a nibh sed libero fermentum aliquet. Quisque sit amet faucibus magna. Donec purus mi, commodo id commodo vel, imperdiet ut mauris. Ut ultricies arcu risus, malesuada efficitur orci euismod in. Proin eleifend est risus, ac sodales nulla mollis vel. Etiam condimentum placerat mi, sed cursus augue dignissim sit amet.",
     },
   ],
+};
+
+export const PricingPlanText = {
+  icon: scicon,
+  title: "Best Pricing Plan",
+  heading: "Choose Your Pricing Plan",
+  plans: [
+    {
+      id: 1,
+      title: "Basic",
+      price: "$150.00",
+      duration: "Pre Monthly",
+    },
+    {
+      id: 2,
+      title: "Basic",
+      price: "$250.00",
+      duration: "Pre Monthly",
+    },
+    {
+      id: 3,
+      title: "Basic",
+      price: "$350.00",
+      duration: "Pre Monthly",
+    },
+  ],
+  features: [
+    { list1: "500+ Sq Metres" },
+    { list2: "Swimming Pool Included" },
+    { list3: "Up to 10 Rooms" },
+    { list4: "Best Premium Materials" },
+    { list5: "Floor Plan Design" },
+    { list6: "Great Customer Support" },
+    { list7: "24/7 Customer Support" },
+  ],
+};
+
+export const PricingDetailText = {
+  img1: left,
+  img2: right,
+  para: "Our software development center provides you with the best resources, expertise.",
+
+  points: [
+    {
+      icon: listitem,
+      point1: "Providing Solutions For Construction",
+    },
+    {
+      icon: listitem,
+      point2: "Work with energetic team",
+    },
+    {
+      icon: listitem,
+      point3: "Providing Solutions For Construction.",
+    },
+  ],
+};
+
+export const FaqDetail = {
+  image: scicon,
+  title: "Great Experience in building",
+  heading: "Frequently Asked Any Questions",
+  para: "Aliquam tempus libero eget arcu euismod, in bibendum nisl posuere. Donec gravida sem eu dolor rhoncus viverra. In vel cursus ante.",
+};
+
+export const FaqText = {
+  questions: [
+    {
+      id: 1,
+      question: "What is Agency ?",
+      answer:
+        "Improve efficiency, provide a better customer experience with modern technolo services available around Improve efficiency, provide a better customer experience",
+    },
+    {
+      id: 2,
+      question: "Nulla vitae est risus. Aenean aliquam dolor a massa",
+      answer:
+        "Improve efficiency, provide a better customer experience with modern technolo services available around Improve efficiency, provide a better customer experience",
+    },
+    {
+      id: 3,
+      question: "Pellentesque habitant morbi tristique senectus ?",
+      answer:
+        "Improve efficiency, provide a better customer experience with modern technolo services available around Improve efficiency, provide a better customer experience",
+    },
+    {
+      id: 4,
+      question: "Habitant morbi tristique senectus ?",
+      answer:
+        "Improve efficiency, provide a better customer experience with modern technolo services available around Improve efficiency, provide a better customer experience",
+    },
+    {
+      id: 5,
+      question: "What should be listed on a business card?",
+      answer:
+        "Improve efficiency, provide a better customer experience with modern technolo services available around Improve efficiency, provide a better customer experience",
+    },
+    {
+      id: 6,
+      question: "Why we are best company?",
+      answer:
+        "Improve efficiency, provide a better customer experience with modern technolo services available around Improve efficiency, provide a better customer experience",
+    },
+    {
+      id: 7,
+      question: "How the template process works?",
+      answer:
+        "Improve efficiency, provide a better customer experience with modern technolo services available around Improve efficiency, provide a better customer experience",
+    },
+    {
+      id: 8,
+      question: "Comapny mission & vision?",
+      answer:
+        "Improve efficiency, provide a better customer experience with modern technolo services available around Improve efficiency, provide a better customer experience",
+    },
+  ],
+};
+
+export const CareerText = [
+  {
+    id: 1,
+    image: avatar1,
+    title: "Engineer",
+    time: "Full Time",
+    location: { icon: location, text: " San Francissco, UK" },
+    date: { icon: calander, text: " 22 March, 2023" },
+    price: { icon: price, text: "$1500 - $2000" },
+    para: "Aliquam tempus libero eget arcu euismod, in bibendum nisl posuere. Donec gravida sem eu dolor rhoncus viverra.",
+  },
+  {
+    id: 2,
+    image: avatar2,
+    title: "Property Manager",
+    time: "Full Time",
+    location: { icon: location, text: " San Francissco, UK" },
+    date: { icon: calander, text: " 22 March, 2023" },
+    price: { icon: price, text: "$1500 - $2000" },
+    para: "Aliquam tempus libero eget arcu euismod, in bibendum nisl posuere. Donec gravida sem eu dolor rhoncus viverra.",
+  },
+  {
+    id: 3,
+    image: avatar3,
+    title: "Painter & Designer",
+    time: "Full Time",
+    location: { icon: location, text: " San Francissco, UK" },
+    date: { icon: calander, text: " 22 March, 2023" },
+    price: { icon: price, text: "$1500 - $2000" },
+    para: "Aliquam tempus libero eget arcu euismod, in bibendum nisl posuere. Donec gravida sem eu dolor rhoncus viverra.",
+  },
+  {
+    id: 4,
+    image: avatar4,
+    title: "Worker",
+    time: "Full Time",
+    location: { icon: location, text: " San Francissco, UK" },
+    date: { icon: calander, text: " 22 March, 2023" },
+    price: { icon: price, text: "$1500 - $2000" },
+    para: "Aliquam tempus libero eget arcu euismod, in bibendum nisl posuere. Donec gravida sem eu dolor rhoncus viverra.",
+  },
+  {
+    id: 5,
+    image: avatar5,
+    title: "3D Animation Engineer",
+    time: "Full Time",
+    location: { icon: location, text: " San Francissco, UK" },
+    date: { icon: calander, text: " 22 March, 2023" },
+    price: { icon: price, text: "$1500 - $2000" },
+    para: "Aliquam tempus libero eget arcu euismod, in bibendum nisl posuere. Donec gravida sem eu dolor rhoncus viverra.",
+  },
+];
+
+export const JobDetailText = {
+  image: careerbg,
+  para1:
+    "With over a decade of experience, we’ve established ourselves as one of the pioneering agencies in th region. Our small, flexible, agile and design-led structures and processes allow us to be highly responsive and innovative. We’re made of passionate leaders, strategists, managers, developers, animators and designers who work together under one umbrella. We are a digitally-led, full-service creative agency. We combine strategy, marketing, design.",
+  para2:
+    "Our small, flexible, agile and design-led structures and processes allow us to be highly responsive and innovative. We’re made of passionate leaders, strategists, managers, developers, animators and designers who work together under one umbrella.",
+  title: "Job Responsibilities",
+  points: {
+    point1:
+      "Work with BAs, product managers and tech teams to lead the Product Design",
+    point2: "Accurately estimate design tickets during planning sessions.",
+    point3:
+      "Contribute to sketching sessions involving non-designersCreate, and pattern libraries.",
+    point4: "Interface patterns is better for UX than reinventing the wheel",
+  },
+  title1: "Skills & Qualifications",
+  points1: {
+    point1:
+      "We don't care about the degrees but as a mid-level designer, we expect that you have a minimum of 5- 8 years of Job experience.",
+    point2: "Expertise in design tools (Figma, illustrator).",
+    point3:
+      "Readability of the project documentation & ability to design regarding this.",
+    point4: "Experience to design products for Envato/U18 is a plus",
+    point5: "Good Portfolio Must.",
+    point6: "Strong communication, collaboration, and analytical skills.",
+    point7:
+      "Good attention to detail, time management, is self-motivated, and takes ownership of responsibilities.",
+    point8: "Ability to work fast and deliver projects on time.",
+  },
+  title2: "Benefits",
+  points2: {
+    point1: "Due time salary.",
+    point2: "2 Festive bonus after completing 6 months.",
+    point3: "Yearly Tour.",
+    point4: "Performance / Project Bonus.",
+    point5: "Monthly Best Employees Bonus.",
+    point6: "Indoor Game & GYM Facilities.",
+    point7: "Yearly Salary Review.",
+    point8: "16 Days Paid Leave (Sick and Casual).",
+    point9: "Opportunity To Learn & Grow.",
+  },
+  title3: "Salary Range",
+  salary: "$1500 - $2000",
+};
+
+export const JobSummaryText = {
+  title: "Job Summary",
+  points: [
+    { icon: location, title: "Location:", detail: " San Francissco, UK" },
+    { icon: job, title: "Job Title:", detail: "Full Time" },
+    { icon: experience, title: "Experience:", detail: "5-8 Years" },
+    {
+      icon: gender,
+      title: "Gender:",
+      detail: "Both males and females are allowed to apply",
+    },
+    { icon: age, title: "Age:", detail: "24-38 years" },
+    { icon: hours, title: "Working Hours:", detail: " 8:00 AM to 5:00 PM" },
+    { icon: calander, title: "Deadline:", detail: "22 March, 2023" },
+    { icon: price, title: "Salary Range", detail: "$1500 - $2000" },
+  ],
+};
+
+export const ApplyJobText = {
+  icon: scicon,
+  title: "Job Apply Now",
+  heading: "Apply For This Job",
+  para: "Integer iaculis ultrices velit nec tempor. Pellentesque aliquet est massa, sit amet tempor mi auctor nec.",
 };

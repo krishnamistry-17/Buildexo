@@ -12,6 +12,7 @@ export default {
           blackquaternary: "#0C0A0A",
           blackquinary: "#161D39",
           blackpara: "#1C1D20",
+          blackfaq: "#182022",
         },
         secondary: "#FFFFFF",
         tertiary: "#F7F7F7",
@@ -34,6 +35,7 @@ export default {
         },
         cream: {
           primary: "#F9F4F4",
+          secondary:"#FFEFE6"
         },
         purple: {
           primary: "#140626",

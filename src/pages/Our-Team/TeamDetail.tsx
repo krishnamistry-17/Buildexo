@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { OurTeamText } from "../../constance/Text";
 import Herosection from "../../components/HeroSection";
 import { teambg } from "../../assets/images";
-import { useEffect } from "react";
+
 import Contact from "../../components/Contact";
 
 const TeamDetail = () => {
@@ -10,13 +10,6 @@ const TeamDetail = () => {
   const engineer = OurTeamText.engineers.find(
     (item) => item.id === Number(id)
   ) || { name: "", designation: "", image: "" };
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, []);
 
   return (
     <>

@@ -13,10 +13,12 @@ import {
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import PageMenu from "../PageMenu";
+import ServiceMenu from "../ServiceMenu";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [pageMenuOpen, setPageMenuOpen] = useState(false);
+  const [ServiceMenuOpen, setServiceMenuOpen] = useState(false);
 
   const navigate = useNavigate();
   const toggleMenu = () => {
@@ -44,7 +46,7 @@ const Navbar = () => {
   const navItems = [
     { label: "Home", to: "/", icon: downarrow },
     { label: "Pages", to: "/pages", icon: downarrow, pageMenu: true },
-    { label: "Services", to: "/services", icon: downarrow },
+    { label: "Services", to: "/services", icon: downarrow, ServiceMenu: true },
     { label: "Blog", to: "/blog", icon: downarrow },
     { label: "Shop", to: "/shop", icon: downarrow },
     { label: "Contact", to: "/contact", icon: downarrow },
@@ -79,7 +81,9 @@ const Navbar = () => {
                     <div
                       className="flex items-center gap-2 cursor-pointer"
                       onClick={() =>
-                        item.pageMenu && setPageMenuOpen(!pageMenuOpen)
+                        (item.pageMenu && setPageMenuOpen(!pageMenuOpen)) ||
+                        (item.ServiceMenu &&
+                          setServiceMenuOpen(!ServiceMenuOpen))
                       }
                     >
                       <p className=" text-[17px] font-exo-bold text-secondary ">
@@ -90,6 +94,13 @@ const Navbar = () => {
                     {item.pageMenu && pageMenuOpen && (
                       <div className="absolute top-full left-0 z-50">
                         <PageMenu onClose={() => setPageMenuOpen(false)} />
+                      </div>
+                    )}
+                    {item.ServiceMenu && ServiceMenuOpen && (
+                      <div className="absolute top-full left-0 z-50">
+                        <ServiceMenu
+                          onClose={() => setServiceMenuOpen(false)}
+                        />
                       </div>
                     )}
                   </div>

@@ -1,5 +1,5 @@
 interface InputFieldProps {
-  type: "text" | "phone" | "email" | "password" | "select" | "textarea";
+  type: "text" | "phone" | "email" | "password" | "select" | "textarea" | "number";
   placeholder: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -19,7 +19,7 @@ const InputField = ({
 }: InputFieldProps) => {
   return (
     <>
-      {(type === "text" || type === "phone" || type === "email") && (
+      {(type === "text" || type === "phone" || type === "email" || type === "number") && (
         <input
           name={name}
           type={type}
