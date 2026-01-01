@@ -9,7 +9,7 @@ interface HerosectionProps {
 
 const Herosection = ({ currentPage, previousPage }: HerosectionProps) => {
   return (
-    <section className="relative w-full h-[90vh]">
+    <section className="relative w-full xl:h-[90vh] h-[80vh]">
       <img
         src={herobg}
         alt="hero"
@@ -20,7 +20,7 @@ const Herosection = ({ currentPage, previousPage }: HerosectionProps) => {
       <div className="relative z-10 flex flex-col items-center justify-center py-[200px]">
         <div className="flex flex-col items-center justify-center">
           <h1
-            className="xl:text-[60px] lg:text-[50px] md:text-[40px] text-[30px]
+            className="xl:text-[60px] lg:text-[50px] md:text-[40px] text-[30px] text-center
              font-exo-bold text-secondary line-height-[78px]"
           >
             {currentPage}

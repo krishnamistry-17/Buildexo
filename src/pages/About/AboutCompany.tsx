@@ -49,13 +49,13 @@ const AboutCompany = () => {
             </div>
           </div>
         </div>
-        <div className="xl:w-[40%] flex justify-center md:px-0 px-[10px]">
-          <div className="relative">
+        <div className="xl:w-[40%] flex justify-center items-center ">
+          <div className="relative ">
             {/* Background card */}
             <div className="sm:w-[420px] sm:h-[420px] w-[300px] h-[300px] bg-orange/10 rounded-[20px]" />
 
             {/* Image card */}
-            <div className="absolute inset-0 -translate-x-6 -translate-y-6">
+            <div className="absolute inset-0 lg:-translate-x-6 lg:-translate-y-6 md:-translate-x-3 md:-translate-y-3  ">
               <div className="w-full h-full rounded-[20px] overflow-hidden shadow-lg bg-white">
                 <img
                   src={aboutcompany}
@@ -65,7 +65,7 @@ const AboutCompany = () => {
               </div>
             </div>
 
-            <div className="absolute bottom-[24px] left-[-24px]">
+            <div className="absolute lg:bottom-[24px] lg:left-[-24px] md:bottom-[14px] md:left-[-14px] bottom-0">
               <div className="bg-orange xl:px-[20px] md:px-[33px] px-[20px] py-[3px] rounded-bl-[20px] rounded-tr-[20px]">
                 <div className="flex items-center justify-center gap-[7px]">
                   <p className="xl:text-[70px] md:text-[50px] text-[30px] font-exo-extrabold text-secondary">

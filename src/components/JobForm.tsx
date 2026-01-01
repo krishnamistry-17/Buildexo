@@ -1,7 +1,12 @@
+import { useState } from "react";
 import Button from "./Button";
 import InputField from "./InputField";
+import { downblack } from "../assets/svgs";
+import Dropdown from "./Dropdown";
 
 const JobForm = () => {
+  const [serviceType, setServiceType] = useState<string | null>(null);
+  const [serviceMenu, setServiceMenu] = useState(false);
   return (
     <>
       <div className=" bg-tertiary w-full">
@@ -41,22 +46,42 @@ const JobForm = () => {
             />
           </div>
           <div className="md:flex flex-col md:flex-row items-center gap-[24px] pt-[19px]">
-            <InputField
-              type="email"
-              placeholder="Email address"
-              value=""
-              onChange={() => {}}
-              name="email"
-            />
-            <InputField
-              type="select"
-              placeholder="Position"
-              value="Position"
-              className="md:mt-0 mt-[20px]"
-              onChange={() => {}}
-              name="Position"
-              options={["Position", "Position 1", "Position 2", "Position 3"]}
-            />
+            <div className="w-full">
+              <InputField
+                type="email"
+                placeholder="Email address"
+                value=""
+                onChange={() => {}}
+                name="email"
+              />
+            </div>
+            <div className=" relative w-full md:mt-0 mt-[20px]">
+              <div
+                className="flex items-center justify-between
+            w-full py-[22px] px-[31px] shadow-sm bg-secondary
+            focus:outline-none focus:ring-0
+            rounded-[30px] cursor-pointer
+            "
+                onClick={() => setServiceMenu(!serviceMenu)}
+              >
+                <p className="text-[15px] font-exo-medium text-gray-graysecondary">
+                  {serviceType || "Select Position"}
+                </p>
+                <img
+                  src={downblack}
+                  alt="downarrow"
+                  className={`${serviceMenu ? "rotate-180" : ""}`}
+                />
+              </div>
+              {serviceMenu && (
+                <Dropdown
+                  isApplyJob={true}
+                  serviceType={serviceType}
+                  setServiceType={setServiceType}
+                  setServiceMenu={setServiceMenu}
+                />
+              )}
+            </div>
           </div>
           <div className="md:flex flex-col md:flex-row items-center gap-[24px] pt-[19px]">
             <InputField

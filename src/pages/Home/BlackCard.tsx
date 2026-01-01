@@ -61,10 +61,10 @@ const BlackCard = () => {
             <img
               src={card1}
               alt="card1"
-              className=" md:rounded-l-[200px] md:rounded-r-[200px] rounded-full
+              className=" md:rounded-l-[200px] md:rounded-r-[200px] 
               w-[380px] h-[231px]"
             />
-            <div className=" flex flex-col gap-[10px]">
+            <div className=" flex flex-col gap-[10px] pt-2">
               {number.map((item) => (
                 <button
                   key={item}
@@ -86,7 +86,7 @@ const BlackCard = () => {
           <img
             src={card2}
             alt="card2"
-            className=" rounded-l-[200px] rounded-r-[200px] w-[550px] h-[200px]"
+            className=" md:rounded-l-[200px] md:rounded-r-[200px] w-[550px] h-[200px]"
           />
         </div>
       </div>

@@ -73,7 +73,7 @@ const TeamDetail = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col pt-[60px] xl:px-[80px] px-[15px]">
+        <div className="flex flex-col md:pt-[60px] pt-[30px] xl:px-[80px] px-[15px]">
           <h2 className="xl:text-[36px] lg:text-[30px] md:text-[25px] text-[20px] font-exo-bold text-black-blacksecondary">
             {OurTeamText.personalInfo[0].title}
           </h2>
@@ -93,7 +93,7 @@ const TeamDetail = () => {
             {OurTeamText.careerGuide[0].para2}
           </p>
         </div>
-        <div className="mt-[60px] w-full xl:px-[80px] px-[15px]">
+        <div className="mt-[60px] w-full xl:px-[80px] ">
           <Contact />
         </div>
       </div>

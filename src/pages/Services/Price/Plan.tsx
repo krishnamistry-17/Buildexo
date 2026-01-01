@@ -2,10 +2,6 @@ import Button from "../../../components/Button";
 import { PricingPlanText } from "../../../constance/Text";
 
 const Plan = () => {
-  const items = PricingPlanText.plans;
-  const filterItems = items.filter((item) => item.id % 2 === 0);
-  console.log(filterItems);
-
   return (
     <>
       <div className="flex flex-col justify-center items-center">

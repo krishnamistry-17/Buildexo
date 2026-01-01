@@ -4,14 +4,14 @@ import Faq from "../../../components/Faq";
 
 const Questions = () => {
   return (
-    <div className="mt-[120px] bg-tertiary w-full ">
+    <div className="md:mt-[120px] mt-[50px] bg-tertiary w-full ">
       <div
         className="xl:flex flex-col xl:flex-row justify-center items-center mx-auto
        max-w-[1240px] xl:py-[110px]"
       >
         <div
           className="flex flex-col flex-1 
-         pl-[45px] pr-[15px] xl:pt-[115px] pt-[50px]   "
+         pl-[45px] pr-[15px] xl:pt-0 pt-[50px]   "
         >
           <div className="md:flex hidden items-center gap-[30px]">
             <img src={PricingDetailText.img1} alt="left" />
@@ -22,7 +22,6 @@ const Questions = () => {
           </p>
           <div className="flex flex-col gap-[10px] pt-[20px] pb-[40px]">
             {PricingDetailText["points"].map((item, index) => {
-              console.log(item);
               return (
                 <div
                   key={index + 1}
@@ -47,7 +46,7 @@ const Questions = () => {
           </div>
         </div>
         <div className="flex-1">
-          <div className="xl:pl-[41px] xl:pr-[15px] xl:pt-[15px] p-[20px]">
+          <div className="xl:pl-[41px] xl:pr-[15px] xl:pt-[15px] pt-[20px]">
             <Faq />
           </div>
         </div>

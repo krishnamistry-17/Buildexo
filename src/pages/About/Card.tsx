@@ -11,12 +11,12 @@ const Card = () => {
         >
           {EnginnerText.map((item) => (
             <div key={item.name} className="flex flex-col ">
-              <div className="aspect-[3/3] overflow-hidden bg-white shadow-sm  rounded-t-[100px] relative">
+              <div className="aspect-[3/3] overflow-hidden bg-white shadow-sm  rounded-t-[100px] relative cursor-pointer">
                 <div className="absolute inset-0 h-full w-full object-cover">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain hover:scale-105 transition-all duration-300"
                   />
                 </div>
               </div>

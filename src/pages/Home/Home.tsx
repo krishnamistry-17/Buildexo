@@ -16,7 +16,7 @@ const Home = () => {
         <HomeHeroSection />
       </div>
       <div className="flex flex-col justify-center items-center mx-auto w-full">
-        <div className=" -mt-16 md:-mt-[60px]">
+        <div className=" -mt-36 md:-mt-[60px] sm:block hidden">
           <CompanyTab />
         </div>
         <div className=" mt-[10px]">
@@ -29,9 +29,9 @@ const Home = () => {
           <BlueCard />
         </div>
         <div className=" mt-[50px]  ">
-          <Research />
+          <Research id="research" />
         </div>
-        <div className="mt-[150px] bg-blue-lightblue w-full ">
+        <div className="lg:mt-[150px] mt-[50px] bg-blue-lightblue w-full ">
           <Engineer />
         </div>
         <div className=" -mt-[60px]">

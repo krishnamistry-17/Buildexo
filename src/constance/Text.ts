@@ -38,6 +38,8 @@ import {
   avatar5,
   avatar4,
   careerbg,
+  image3,
+  image4,
 } from "../assets/images";
 import {
   call,
@@ -62,6 +64,10 @@ import {
   experience,
   job,
   hours,
+  roof,
+  building,
+  design,
+  crane,
 } from "../assets/svgs";
 export const HeroText = {
   para: " Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.",
@@ -106,18 +112,43 @@ export const ResearchText = [
 
 export const projectText = [
   {
+    id: 1,
     image: pro1,
     icon: locationwhite,
     location: " 100 Sunrise Ct Hamel, Minnesota(MN)",
     title: "Trusted By Thousand",
   },
   {
+    id: 2,
     image: pro2,
     icon: locationwhite,
     location: " 100 Sunrise Ct Hamel, Minnesota(MN)",
     title: "Food Factory Design",
   },
   {
+    id: 3,
+    image: pro3,
+    icon: locationwhite,
+    location: " 100 Sunrise Ct Hamel, Minnesota(MN)",
+    title: "Food Factory Design",
+  },
+
+  {
+    id: 4,
+    image: pro2,
+    icon: locationwhite,
+    location: " 100 Sunrise Ct Hamel, Minnesota(MN)",
+    title: "Food Factory Design",
+  },
+  {
+    id: 5,
+    image: pro1,
+    icon: locationwhite,
+    location: " 100 Sunrise Ct Hamel, Minnesota(MN)",
+    title: "Trusted By Thousand",
+  },
+  {
+    id: 6,
     image: pro3,
     icon: locationwhite,
     location: " 100 Sunrise Ct Hamel, Minnesota(MN)",
@@ -651,3 +682,55 @@ export const ApplyJobText = {
   heading: "Apply For This Job",
   para: "Integer iaculis ultrices velit nec tempor. Pellentesque aliquet est massa, sit amet tempor mi auctor nec.",
 };
+
+export const sliderList = [
+  {
+    id: 1,
+    image: image1,
+    title: "Flooring",
+    icon: roof,
+    description: "Flooring Roofing",
+  },
+  {
+    id: 2,
+    image: image2,
+    title: "Flooring",
+    icon: building,
+    description: "Building Renovation",
+  },
+  {
+    id: 3,
+    image: image3,
+    title: "Flooring",
+    icon: design,
+    description: "Archaitecture Design",
+  },
+  {
+    id: 4,
+    image: image4,
+    title: "Flooring",
+    icon: crane,
+    description: "Flooring Crane",
+  },
+  {
+    id: 5,
+    image: image2,
+    title: "Flooring",
+    icon: crane,
+    description: "Flooring Crane",
+  },
+  {
+    id: 6,
+    image: image1,
+    title: "Flooring",
+    icon: crane,
+    description: "Flooring Crane",
+  },
+  {
+    id: 7,
+    image: image3,
+    title: "Flooring",
+    icon: crane,
+    description: "Flooring Crane",
+  },
+];

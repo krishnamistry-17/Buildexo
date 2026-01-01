@@ -11,7 +11,7 @@ const BlueCard = () => {
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className=" relative z-10">
-        <div className="flex items-center gap-[10px] justify-center ">
+        <div className="flex items-center gap-[10px] justify-center lg:px-0 px-[10px]">
           <div className=" relative">
             <img
               src={blue1}
@@ -22,7 +22,8 @@ const BlueCard = () => {
               <img src={link} alt="link" />
             </div>
             <div
-              className="bg-blue-darkblue rounded-l-[80px] rounded-r-[80px] p-[25px] md:block hidden
+              className="bg-blue-darkblue rounded-l-[80px] rounded-r-[80px] p-[25px]
+               lg:block hidden
              absolute lg:bottom-3 lg:-left-1/2  "
             >
               <div className="flex items-center gap-[10px]">

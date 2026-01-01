@@ -12,7 +12,7 @@ const About = () => {
         <div>
           <AboutCompany />
         </div>
-        <div className="w-full pt-[120px]">
+        <div className="w-full md:pt-[120px] pt-[50px]">
           <WhatDo />
         </div>
         <div className="w-full xl:pt-[145px] pt-[50px]">

@@ -1,7 +1,13 @@
+import { useState } from "react";
 import Button from "./Button";
 import InputField from "./InputField";
+import { downblack } from "../assets/svgs";
+import Dropdown from "./Dropdown";
 
 const Contact = () => {
+  const [serviceType, setServiceType] = useState<string | null>(null);
+  const [serviceMenu, setServiceMenu] = useState(false);
+
   return (
     <>
       <div className=" bg-tertiary w-full">
@@ -30,37 +36,59 @@ const Contact = () => {
               className="md:mt-0 mt-[20px]"
             />
           </div>
-          <div className="md:flex flex-col md:flex-row items-center gap-[24px] pt-[19px]">
-            <InputField
-              type="email"
-              placeholder="Email address"
-              value=""
-              onChange={() => {}}
-              name="email"
-            />
-            <InputField
-              type="select"
-              placeholder="Select Service Type"
-              value="select service"
-              className="md:mt-0 mt-[20px]"
-              onChange={() => {}}
-              name="serviceType"
-              options={[
-                "Select Service Type",
-                "Service Type 1",
-                "Service Type 2",
-                "Service Type 3",
-              ]}
-            />
+          <div className="md:flex flex-col md:flex-row items-center gap-[20px] pt-[19px]">
+            <div className="w-full">
+              <InputField
+                type="email"
+                placeholder="Email address"
+                value=""
+                onChange={() => {}}
+                name="email"
+              />
+            </div>
+            <div
+              className=" relative w-full
+            md:mt-0 mt-[20px]
+            "
+            >
+              <div
+                className="flex items-center justify-between
+            w-full py-[22px] px-[31px] shadow-sm bg-secondary
+            focus:outline-none focus:ring-0 
+            rounded-[30px] cursor-pointer
+            "
+                onClick={() => setServiceMenu(!serviceMenu)}
+              >
+                <p className="text-[15px] font-exo-medium text-gray-graysecondary">
+                  {serviceType || "Select Service Type"}
+                </p>
+                <img
+                  src={downblack}
+                  alt="downarrow"
+                  className={`${serviceMenu ? "rotate-180" : ""}`}
+                />
+              </div>
+              {serviceMenu && (
+                <Dropdown
+                  isApplyJob={false}
+                  serviceType={serviceType}
+                  setServiceType={setServiceType}
+                  setServiceMenu={setServiceMenu}
+                />
+              )}
+            </div>
           </div>
+
           <div className="md:flex flex-col md:flex-row items-center gap-[24px] pt-[19px]">
+            <div className="w-full">
             <InputField
               type="textarea"
               placeholder="Type your message"
               value=""
-              onChange={() => {}}
-              name="message"
-            />
+              onChange={() => {}} 
+                name="message"
+              />
+            </div>
           </div>
           <div className="flex justify-center items-center my-3">
             <Button

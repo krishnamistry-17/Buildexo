@@ -7,7 +7,7 @@ const Career = () => {
   return (
     <>
       <Herosection currentPage="Career" previousPage="Services" />
-      <div className="flex justify-center items-center mx-auto max-w-[1240px] xl:px-0 px-[20px] ">
+      <div className="flex justify-center items-center mx-auto max-w-[1240px]  ">
         <div className=" grid md:grid-cols-2 grid-cols-1 gap-[24px]">
           {CareerText?.map((item, index) => {
             return (
@@ -33,17 +33,17 @@ const Career = () => {
                   </p>
                 </div>
                 <div className="lg:flex flex-col lg:flex-row justify-between items-center pt-[20px]">
-                  <div className="flex items-center gap-[9px]">
+                  <div className="flex items-center gap-[9px] ">
                     <img src={item.location.icon} alt={item.location.text} />
                     <p className="text-[16px] font-exo-regular text-gray-gray">
                       {item.location.text}
                     </p>
                   </div>
-                  <div className="flex items-center gap-[10px]">
+                  <div className="flex items-center gap-[10px] lg:pt-0 pt-[10px]">
                     <img src={item.date.icon} alt={item.date.text} />
                     <p>{item.date.text}</p>
                   </div>
-                  <div className="flex items-center gap-[10px]">
+                  <div className="flex items-center gap-[10px] lg:pt-0 pt-[10px]">
                     <img src={item.price.icon} alt={item.price.text} />
                     <p>{item.price.text}</p>
                   </div>

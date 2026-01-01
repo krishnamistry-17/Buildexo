@@ -1,16 +1,24 @@
 import { pr1, pr2, section } from "../../assets/images";
 import { projectText, ResearchText } from "../../constance/Text";
-import { budget } from "../../assets/svgs";
+import { budget, next, prev } from "../../assets/svgs";
 import Button from "../../components/Button";
+import SliderMenu from "../../components/SliderMenu";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
-const Research = () => {
+const Research = ({ id }: { id: string }) => {
+  const width = useWindowWidth();
+
+  const visibleCount = width > 1180 ? 3 : width > 768 ? 2 : 1;
+
   return (
-    <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[32px] md:pb-[135px] pb-[50px] md:mx-20">
+    <div id={id}>
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[32px] 
+      md:pb-[135px] pb-[50px] md:mx-20"
+      >
         {ResearchText.map((item, index) => {
           const lgReverse = Math.floor(index / 1) % 2 === 1;
 
-          console.log(lgReverse);
           return (
             <div
               key={item.number}
@@ -18,7 +26,7 @@ const Research = () => {
             ${lgReverse ? "lg:flex-col-reverse" : "flex-col"}`}
             >
               {lgReverse ? (
-                <div className="flex flex-col gap-[10px] items-center">
+                <div className="flex flex-col gap-[10px] items-center sm:px-0 px-[10px]">
                   {" "}
                   <p className="text-[26px] font-exo-bold text-black-blacktertiary line-height-[33.8px]">
                     {item.title}
@@ -28,7 +36,7 @@ const Research = () => {
                   </p>
                 </div>
               ) : (
-                <div className="flex flex-col gap-[10px] items-center">
+                <div className="flex flex-col gap-[10px] items-center sm:px-0 px-[10px]">
                   <p className="text-[26px] font-exo-bold text-black-blacktertiary line-height-[33.8px]">
                     {item.title}
                   </p>
@@ -65,7 +73,7 @@ const Research = () => {
       md:flex-row 
       gap-[16px] lg:gap-[39px]
       w-full
-      px-[16px] sm:px-[30px] xl:px-[143px]
+     sm:px-[30px] xl:px-[143px]
       items-center
       justify-center
       mx-auto
@@ -73,54 +81,57 @@ const Research = () => {
       md:-mt-[150px]
     "
         >
-          {projectText.map((item) => (
-            <div
-              key={item.title}
-              className="flex flex-col  w-full sm:max-w-[350px]"
-            >
-              {/* Image */}
-              <img
-                src={item.image}
-                alt={item.title}
-                className="object-cover rounded-t-[10px] w-full"
-              />
+          <SliderMenu
+            items={projectText}
+            prevIcon={prev}
+            nextIcon={next}
+            arrowClassName="absolute z-10 top-1/2 "
+            visibleCount={visibleCount}
+            renderItem={(item) => (
+              <div className="flex flex-col relative px-2">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="object-cover rounded-t-[10px] w-full"
+                />
 
-              {/* Content */}
-              <div className="bg-gray-graynumber rounded-b-[10px]">
-                {/* Location badge */}
-                <div
-                  className="
-              flex items-center gap-[10px]
-              bg-orange
-              px-[12px] py-[10px]
-              rounded-full
-              -mt-[20px]
-              mx-[10px]
-              lg:mx-[35px]
-            "
-                >
-                  <img src={item.icon} alt={item.title} />
-                  <p className="text-[12px] lg:text-[15px] font-exo-regular text-secondary">
-                    {item.location}
+                {/* Content */}
+                <div className="bg-gray-graynumber rounded-b-[10px]">
+                  {/* Location badge */}
+                  <div
+                    className="
+                    flex items-center gap-[10px]
+                    bg-orange
+                    px-[12px] py-[10px]
+                    rounded-full
+                    -mt-[20px]
+                    mx-[10px]
+                    lg:mx-[35px]
+                    "
+                  >
+                    <img src={item.icon} alt={item.title} />
+                    <p className="text-[12px] lg:text-[15px] font-exo-regular text-secondary">
+                      {item.location}
+                    </p>
+                  </div>
+
+                  {/* Title */}
+                  <p
+                    className="
+                    text-[18px] sm:text-[20px] lg:text-[25px]
+                    font-exo-bold
+                    text-black-blacksecondary
+                    leading-[32px]
+                    px-[12px] md:pl-[45px]
+                    pt-[12px] pb-[24px]
+                    "
+                  >
+                    {item.title}
                   </p>
                 </div>
-
-                {/* Title */}
-                <p
-                  className="
-              text-[18px] sm:text-[20px] lg:text-[25px]
-              font-exo-bold
-              text-black-blacksecondary
-              leading-[32px]
-              px-[12px] md:pl-[45px]
-              pt-[12px] pb-[24px]
-            "
-                >
-                  {item.title}
-                </p>
               </div>
-            </div>
-          ))}
+            )}
+          />
         </div>
       </div>
 
@@ -136,11 +147,11 @@ const Research = () => {
           </div>
 
           {/* Image */}
-          <div className="w-full md:w-[50%] flex-1 relative">
+          <div className="w-full md:w-[50%] flex-1 relative sm:px-0 px-[10px]">
             <img
               src={pr1}
               alt="pr1"
-              className="w-full h-full object-cover rounded-tr-[10px] rounded-br-[10px]"
+              className="w-full h-full object-cover lg:rounded-tr-[10px] lg:rounded-br-[10px]"
             />
 
             <div className="absolute bottom-5 left-5">
@@ -162,11 +173,11 @@ const Research = () => {
         {/* Row 2 */}
         <div className="flex flex-col-reverse md:flex-row w-full">
           {/* Image */}
-          <div className="w-full md:w-[50%] flex-1 relative">
+          <div className="w-full md:w-[50%] flex-1 relative sm:px-0 px-[10px]">
             <img
               src={pr2}
               alt="pr2"
-              className="w-full h-full object-cover rounded-tl-[10px] rounded-bl-[10px]"
+              className="w-full h-full object-cover lg:rounded-tl-[10px] lg:rounded-bl-[10px]"
             />
 
             <div className="absolute bottom-5 left-5">
@@ -202,7 +213,7 @@ const Research = () => {
           type="button"
         />
       </div>
-    </>
+    </div>
   );
 };
 

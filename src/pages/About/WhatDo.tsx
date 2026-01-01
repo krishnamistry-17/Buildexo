@@ -20,7 +20,7 @@ const WhatDo = () => {
     sm:w-[340px] sm:h-[400px] 
     lg:w-[420px] lg:h-[480px]"
               >
-                {/* Image 1 */}
+                {/* Image 1 keep z-10*/}
                 <img
                   src={do1}
                   alt="do1"
@@ -31,7 +31,7 @@ const WhatDo = () => {
         rounded-[30px] z-10"
                 />
 
-                {/* Image 2 */}
+                {/* Image 2 keep z-20*/}
                 <img
                   src={do2}
                   alt="do2"
@@ -42,7 +42,7 @@ const WhatDo = () => {
         rounded-[30px] z-20"
                 />
 
-                {/* Image 3 */}
+                {/* Image 3 z-30 */}
                 <img
                   src={do3}
                   alt="do3"

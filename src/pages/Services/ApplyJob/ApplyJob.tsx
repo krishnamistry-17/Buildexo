@@ -6,7 +6,7 @@ const ApplyJob = () => {
   return (
     <>
       <Herosection currentPage="Job Apply" previousPage="Home" />
-      <div className="flex flex-col justify-center items-center mx-auto max-w-[1240px] xl:px-0 px-[20px]">
+      <div className="flex flex-col justify-center items-center mx-auto max-w-[1240px]  ">
         <img src={ApplyJobText.icon} alt="Apply Job" />
         <p className="text-[18px] font-exo-regular text-orange pt-[3px]">
           {ApplyJobText.title}
@@ -17,7 +17,7 @@ const ApplyJob = () => {
         >
           {ApplyJobText.heading}
         </h2>
-        <p className="text-[18px] font-exo-regular text-gray-graytext text-center md:max-w-[616px] pt-[33px]">
+        <p className="text-[18px] font-exo-regular text-gray-graytext text-center md:max-w-[616px] pt-[33px] px-2">
           {ApplyJobText.para}
         </p>
         <div className="pt-[53px] w-full">

@@ -15,14 +15,13 @@ const CareerDetails = () => {
     price: { icon: "", text: "" },
     para: "",
   };
-  console.log(career);
 
   return (
     <>
       <Herosection currentPage={career?.title} previousPage="Career" />
       <div className="lg:flex flex-col lg:flex-row gap-[29px] jitems-center mx-auto max-w-[1240px] lg:px-[20px]">
-        <div className="bg-tertiary rounded-[10px] w-full xl:px-0 px-[20px] lg:w-[70%]">
-          <div className="flex flex-col md:px-[30px] pt-[30px]">
+        <div className="bg-tertiary rounded-[10px] w-full  lg:w-[70%]">
+          <div className="flex flex-col md:px-[30px] px-[20px] pt-[30px] ">
             <img
               src={JobDetailText.image}
               alt="career"

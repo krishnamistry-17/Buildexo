@@ -10,7 +10,7 @@ const Faq = () => {
     FaqText.questions.slice(0, 3)
   );
   const { pathname } = useLocation();
-  console.log(pathname);
+ 
   const navigate = useNavigate();
   useEffect(() => {
     const faqSection = pathname.includes("/faq");

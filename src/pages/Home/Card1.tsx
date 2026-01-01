@@ -6,7 +6,7 @@ import Button from "../../components/Button";
 const Card1 = () => {
   return (
     <div className="flex">
-      <div className="flex items-center justify-center w-full px-[30px]">
+      <div className="flex items-center justify-center w-full md:px-[30px]">
         <div className="w-[620px] lg:block hidden">
           <img
             src={card1}
@@ -19,14 +19,14 @@ const Card1 = () => {
             {Card1Text.map((item) => (
               <div key={item.number}>
                 <p
-                  className="text-[18px] font-exo-regular text-gray-gray line-height-[28px] 
+                  className="md:text-[18px] text-[16px] font-exo-regular text-gray-gray line-height-[28px] 
                  max-w-[562px] pb-[23px] xl:pt-0 lg:pt-[30px] md:pt-0 pt-[50px]"
                 >
                   {item.description}
                 </p>
                 <div className="flex justify-between items-center md:flex-row flex-col">
-                  <div className="flex flex-col pr-[30px] w-full">
-                    <p className="xl:text-[55px] lg:text-[45px] md:text-[35px] text-[25px] font-exo-extrabold text-orange line-height-[55px]">
+                  <div className="flex flex-col xl:pr-[30px] w-full">
+                    <p className="xl:text-[55px] lg:text-[45px] md:text-[35px] sm:text-[25px] text-[20px] font-exo-extrabold text-orange line-height-[55px]">
                       {item.number}
                     </p>
                     <p className="text-[17px] font-exo-bold text-black-blackquaternary   uppercase">
@@ -34,21 +34,21 @@ const Card1 = () => {
                     </p>
                   </div>
                   <div className="flex flex-col gap-[10px] w-full md:pt-0 pt-[20px]">
-                    {item.points.map((point) => (
-                      <>
+                    {item.points.map((point, index) => (
+                      <div key={index} className="flex flex-col gap-[10px]">
                         <div className="flex items-center gap-[10px] w-full">
                           <img src={check} alt="check" />
-                          <p className="text-[20px] font-exo-semibold text-black-blacksecondary ">
+                          <p className="lg:text-[20px] md:text-[18px] text-[16px] font-exo-semibold text-black-blacksecondary ">
                             {point.point1}
                           </p>
                         </div>
-                        <div className="flex items-center gap-[10px] w-full">
+                        <div className="flex items-center gap-[10px] w-full lg:pt-0 pt-[10px]">
                           <img src={check} alt="check" />
-                          <p className="text-[20px] font-exo-semibold text-black-blacksecondary ">
+                          <p className="lg:text-[20px] md:text-[18px] text-[16px] font-exo-semibold text-black-blacksecondary ">
                             {point.point2}
                           </p>
                         </div>
-                      </>
+                      </div>
                     ))}
                   </div>
                 </div>

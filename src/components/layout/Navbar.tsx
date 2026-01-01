@@ -11,7 +11,7 @@ import {
 } from "../../assets/svgs";
 
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PageMenu from "../PageMenu";
 import ServiceMenu from "../ServiceMenu";
 
@@ -44,13 +44,48 @@ const Navbar = () => {
   ];
 
   const navItems = [
-    { label: "Home", to: "/", icon: downarrow },
-    { label: "Pages", to: "/pages", icon: downarrow, pageMenu: true },
-    { label: "Services", to: "/services", icon: downarrow, ServiceMenu: true },
-    { label: "Blog", to: "/blog", icon: downarrow },
-    { label: "Shop", to: "/shop", icon: downarrow },
-    { label: "Contact", to: "/contact", icon: downarrow },
+    {
+      label: "Pages",
+      to: "",
+      icon: downarrow,
+      pageMenu: true,
+      showDownArrow: true,
+    },
+    {
+      label: "Services",
+      to: "",
+      icon: downarrow,
+      ServiceMenu: true,
+      showDownArrow: true,
+    },
+    { label: "Blog", to: "/blog", icon: downarrow, showDownArrow: false },
+    { label: "Shop", to: "/shop", icon: downarrow, showDownArrow: false },
+    { label: "Contact", to: "/contact", icon: downarrow, showDownArrow: false },
   ];
+
+  const menuItems = [
+    { label: "About", to: "/about" },
+    { label: "Portfolio", to: "/portfolio" },
+    { label: "Our Team", to: "/ourteam" },
+    { label: "Price", to: "/services/pricing" },
+    { label: "Career", to: "/services/career" },
+  ];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuOpen &&
+        event.target instanceof HTMLElement &&
+        !event.target.closest(".navbar-container")
+      ) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <div className={`absolute top-[20px] left-0 w-full z-10`}>
@@ -86,10 +121,15 @@ const Navbar = () => {
                           setServiceMenuOpen(!ServiceMenuOpen))
                       }
                     >
-                      <p className=" text-[17px] font-exo-bold text-secondary ">
+                      <Link
+                        to={item.to}
+                        className=" text-[17px] font-exo-bold text-secondary "
+                      >
                         {item.label}
-                      </p>
-                      <img src={item.icon} alt={item.label} />
+                      </Link>
+                      {item.showDownArrow && (
+                        <img src={item.icon} alt={item.label} />
+                      )}
                     </div>
                     {item.pageMenu && pageMenuOpen && (
                       <div className="absolute top-full left-0 z-50">
@@ -133,12 +173,13 @@ const Navbar = () => {
                     </button>
                   </div>
                   <div className=" flex flex-col items-start justify-start gap-5">
-                    {navItems.map((item) => (
+                    {menuItems.map((item) => (
                       <Link
                         to={item.to}
                         className="flex items-start justify-start gap-2"
+                        key={item.label}
                       >
-                        <p className=" text-[17px] font-exo-regular text-black-blackprimary">
+                        <p className=" text-[17px] font-exo-medium text-black-blackprimary">
                           {item.label}
                         </p>
                       </Link>

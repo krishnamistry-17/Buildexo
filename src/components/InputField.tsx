@@ -1,11 +1,10 @@
 interface InputFieldProps {
-  type: "text" | "phone" | "email" | "password" | "select" | "textarea" | "number";
+  type: "text" | "phone" | "email" | "password" | "textarea" | "number";
   placeholder: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   name: string;
   className?: string;
-  options?: string[];
 }
 
 const InputField = ({
@@ -15,11 +14,13 @@ const InputField = ({
   onChange,
   name,
   className,
-  options = [],
 }: InputFieldProps) => {
   return (
     <>
-      {(type === "text" || type === "phone" || type === "email" || type === "number") && (
+      {(type === "text" ||
+        type === "phone" ||
+        type === "email" ||
+        type === "number") && (
         <input
           name={name}
           type={type}
@@ -32,37 +33,17 @@ const InputField = ({
             rounded-[30px] ${className}`}
         />
       )}
-      {type === "select" && (
-        <select
+      {type === "textarea" && (
+        <textarea
           name={name}
-          id={name}
+          placeholder={placeholder}
+          rows={4}
+          cols={30}
+          value={value}
           className={`w-full py-[22px] px-[31px] shadow-sm 
             text-[15px] font-exo-medium text-gray-graysecondary
             focus:outline-none focus:ring-0
             rounded-[30px] ${className}`}
-        >
-          {options.map((option) => (
-            <option
-              key={option}
-              value={option}
-              className="text-[15px] font-exo-medium text-gray-graysecondary bg-white"
-            >
-              {option}
-            </option>
-          ))}
-        </select>
-      )}
-      {type === "textarea" && (
-        <textarea
-          rows={4}
-          cols={30}
-          placeholder={placeholder}
-          className={`text-[15px] font-exo-regular text-gray-graysecondary
-            focus:outline-none focus:ring-0
-            rounded-[20px]
-            pt-[21px] pl-[31px] pb-[100px] w-full ${className}`}
-          value={value}
-          name={name}
         />
       )}
     </>

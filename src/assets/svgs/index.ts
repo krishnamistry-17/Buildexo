@@ -42,3 +42,6 @@ export { default as age } from "./age.svg";
 export { default as gender } from "./gender.svg";
 export { default as experience } from "./experience.svg";
 export { default as job } from "./job.svg";
+export { default as downblack } from "./downblack.svg";
+export { default as prev } from "./prev.svg";
+export { default as next } from "./next.svg";

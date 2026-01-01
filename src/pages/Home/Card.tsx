@@ -47,7 +47,7 @@ const Card = () => {
           </div>
           <div className="sm:flex px-[10px]">
             <img src={sign} alt="sign" />
-            <div className="flex flex-col pl-[38px]">
+            <div className="flex flex-col md:pl-[38px] pl-2">
               <p className=" text-[25px] font-exo-extrabold text-black-blacksecondary">
                 Tom Henders
               </p>

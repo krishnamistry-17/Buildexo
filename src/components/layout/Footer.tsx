@@ -15,7 +15,11 @@ const Footer = () => {
                   key={index}
                   src={image}
                   alt="footer"
-                  className={`${isNotAbout ? "block" : "hidden"}`}
+                  className={`${
+                    isNotAbout
+                      ? "block hover:scale-105 transition-all duration-300"
+                      : "hidden"
+                  }`}
                 />
               ))}
             </div>
@@ -107,7 +111,7 @@ const Footer = () => {
                     alt="logo"
                     className="max-w-[148px]"
                   />
-                  <p className="text-[18px] font-exo-regular text-secondary leading-[28px] py-[18px]">
+                  <p className="sm:text-[18px] text-[16px] font-exo-regular text-secondary leading-[28px] py-[18px]">
                     {item.description}
                   </p>
                   <img
@@ -172,7 +176,7 @@ const Footer = () => {
 
             <div className="border-t border-secondary/20">
               <p className="text-[15px] font-exo-regular text-secondary text-center py-[31px]">
-                © Copyright 2023 All rights reserved.
+                © Copyright 2025 All rights reserved.
               </p>
             </div>
           </div>

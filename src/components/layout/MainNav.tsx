@@ -9,8 +9,8 @@ import {
   rightarrow,
   search,
 } from "../../assets/svgs";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import PageMenu from "../PageMenu";
 import ServiceMenu from "../ServiceMenu";
 
@@ -18,6 +18,7 @@ const MainNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [pageMenuOpen, setPageMenuOpen] = useState(false);
   const [ServiceMenuOpen, setServiceMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -40,14 +41,50 @@ const MainNav = () => {
       detail: "info@example.com",
     },
   ];
+
   const navItems = [
-    { label: "Home", to: "/", icon: downarrow },
-    { label: "Pages", to: "/pages", icon: downarrow, pageMenu: true },
-    { label: "Services", to: "/services", icon: downarrow, ServiceMenu: true },
-    { label: "Blog", to: "/blog", icon: downarrow },
-    { label: "Shop", to: "/shop", icon: downarrow },
-    { label: "Contact", to: "/contact", icon: downarrow },
+    {
+      label: "Pages",
+      to: "",
+      icon: downarrow,
+      pageMenu: true,
+      showDownArrow: true,
+    },
+    {
+      label: "Services",
+      to: "",
+      icon: downarrow,
+      ServiceMenu: true,
+      showDownArrow: true,
+    },
+    { label: "Blog", to: "/blog", icon: downarrow, showDownArrow: false },
+    { label: "Shop", to: "/shop", icon: downarrow, showDownArrow: false },
+    { label: "Contact", to: "/contact", icon: downarrow, showDownArrow: false },
   ];
+
+  const menuItems = [
+    { label: "About", to: "/about" },
+    { label: "Portfolio", to: "/portfolio" },
+    { label: "Our Team", to: "/ourteam" },
+    { label: "Price", to: "/services/pricing" },
+    { label: "Career", to: "/services/career" },
+  ];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuOpen &&
+        event.target instanceof HTMLElement &&
+        !event.target.closest(".main-nav-container")
+      ) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <div className="flex flex-col relative">
@@ -73,6 +110,7 @@ const MainNav = () => {
             <img
               src={logo}
               alt="logo"
+              onClick={() => navigate("/")}
               className="md:pt-[21px] md:pl-[16px] md:pb-[26px] md:pr-[50px] pt-[16px] pl-[10px] pb-[20px] pr-[40px]"
             />
           </div>
@@ -88,10 +126,15 @@ const MainNav = () => {
                       (item.ServiceMenu && setServiceMenuOpen(!ServiceMenuOpen))
                     }
                   >
-                    <p className="text-[16px] font-exo-regular text-secondary">
+                    <Link
+                      to={item.to}
+                      className="text-[16px] font-exo-regular text-secondary"
+                    >
                       {item.label}
-                    </p>
-                    <img src={item.icon} alt={item.label} />
+                    </Link>
+                    {item.showDownArrow && (
+                      <img src={item.icon} alt={item.label} />
+                    )}
                   </div>
 
                   {/* Page dropdown – opens directly below Pages */}
@@ -123,7 +166,7 @@ const MainNav = () => {
                   className=" w-[12px] h-[16px] text-secondary"
                 />
               </div>
-              <button className="lg:hidden block" onClick={toggleMenu}>
+              <button className="lg:hidden block mr-5" onClick={toggleMenu}>
                 {<Menu className=" text-secondary mt-1" />}
               </button>
             </div>
@@ -131,19 +174,26 @@ const MainNav = () => {
         </div>
       </div>
       {menuOpen && (
-        <div className=" absolute top-20 right-0 w-[300px] bg-white h-fit bg-black-secondary rounded-[10px] p-[10px] z-50">
+        <div className=" absolute top-24 sm:right-[168px] right-[9px] w-[200px] bg-white h-fit bg-black-secondary rounded-[10px] p-[10px] z-50">
           <div className=" flex items-center justify-end">
             <button onClick={toggleMenu}>
               <X className=" text-black-secondary" />
             </button>
           </div>
-          <div className=" flex flex-col items-start justify-start gap-5">
-            {navItems.map((item) => (
+          <div
+            className=" flex flex-col items-start justify-start gap-5"
+            onClick={() => setMenuOpen(false)}
+          >
+            {menuItems.map((item) => (
               <Link
                 to={item.to}
                 className="flex items-start justify-start gap-2"
+                key={item.label}
               >
-                <p className=" text-[17px] font-exo-regular text-black-blackprimary">
+                <p
+                  className=" text-[17px] font-exo-medium text-black-blackprimary
+                "
+                >
                   {item.label}
                 </p>
               </Link>
