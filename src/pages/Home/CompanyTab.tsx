@@ -16,7 +16,7 @@ const CompanyTab = () => {
   ];
   return (
     <>
-      <div className=" py-[23px] lg:mx-0 sm:mx-[20px] bg-secondary drop-shadow-sm rounded-full mt-auto">
+      <div className=" py-[23px] lg:mx-0 sm:mx-[20px] bg-secondary drop-shadow-sm rounded-full -mt-4 md:-mt-[60px]">
         <div className=" flex gap-[30px]">
           {companyList.map((item) => (
             <div key={item.id} className="w-full h-full">

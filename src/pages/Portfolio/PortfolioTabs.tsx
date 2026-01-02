@@ -2,10 +2,15 @@ import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import { PortfolioImage, PortfolioText } from "../../constance/Text";
 import { useMediaQuery } from "react-responsive";
+import useLoader from "../../hooks/useLoader";
+import LoaderComponent from "../../components/Loader";
 
 const PortfolioTabs = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
+  const { loading } = useLoader();
+
+  if (loading) return <LoaderComponent />;
 
   return (
     <div>

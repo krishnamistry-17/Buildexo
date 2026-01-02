@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { prev as defaultPrev, next as defaultNext } from "../assets/svgs";
 
-//here the T is type of typescript that ts automatically refers the type that will decide later 
+//here the T is type of typescript that ts automatically refers the type that will decide later
 interface SliderProps<T> {
   items: T[];
   renderItem: (item: T) => React.ReactNode;

@@ -16,7 +16,7 @@ const Home = () => {
         <HomeHeroSection />
       </div>
       <div className="flex flex-col justify-center items-center mx-auto w-full">
-        <div className=" -mt-36 md:-mt-[60px] sm:block hidden">
+        <div>
           <CompanyTab />
         </div>
         <div className=" mt-[10px]">

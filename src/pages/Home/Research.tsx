@@ -88,7 +88,7 @@ const Research = ({ id }: { id: string }) => {
             arrowClassName="absolute z-10 top-1/2 "
             visibleCount={visibleCount}
             renderItem={(item) => (
-              <div className="flex flex-col relative px-2">
+              <div className="flex flex-col relative px-2" key={item.id}>
                 <img
                   src={item.image}
                   alt={item.title}

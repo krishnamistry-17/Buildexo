@@ -1,6 +1,5 @@
 import { blue1, blue2, bluecardbg, fc1, link } from "../../assets/images";
 import { callblack } from "../../assets/svgs";
-import Button from "../../components/Button";
 
 const BlueCard = () => {
   return (
@@ -58,12 +57,12 @@ const BlueCard = () => {
               For over 80 years, We have been the trusted name in heating, air
               conditioning and plumbing businesses.
             </p>
-            <Button
-              children="More Explore"
-              onClick={() => {}}
-              className="bg-orange md:px-8 md:py-4 px-4 py-2 font-exo-bold  uppercase text-secondary rounded-[4px] md:text-[15px] text-[12px] mt-[33px]"
+            <button
+              className="bg-orange md:px-8 md:py-4 p-3 font-exo-bold  uppercase text-secondary rounded-[4px] md:text-[15px] text-[12px] mt-[33px]"
               type="button"
-            />
+            >
+              <span>More Explore</span>
+            </button>
           </div>
         </div>
       </div>

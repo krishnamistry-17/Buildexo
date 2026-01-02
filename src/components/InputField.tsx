@@ -5,6 +5,8 @@ interface InputFieldProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   name: string;
   className?: string;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  error?: boolean;
 }
 
 const InputField = ({
@@ -14,6 +16,8 @@ const InputField = ({
   onChange,
   name,
   className,
+  onBlur,
+  error,
 }: InputFieldProps) => {
   return (
     <>
@@ -27,10 +31,14 @@ const InputField = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          onBlur={onBlur}
           className={`w-full py-[22px] px-[31px] shadow-sm 
             text-[15px] font-exo-medium text-gray-graysecondary
             focus:outline-none focus:ring-0
-            rounded-[30px] ${className}`}
+            rounded-[30px] ${className} ${
+            error ? "!border-2 !border-red-500 focus:!border-red-500" : ""
+          }
+`}
         />
       )}
       {type === "textarea" && (
@@ -43,7 +51,9 @@ const InputField = ({
           className={`w-full py-[22px] px-[31px] shadow-sm 
             text-[15px] font-exo-medium text-gray-graysecondary
             focus:outline-none focus:ring-0
-            rounded-[30px] ${className}`}
+            rounded-[30px] ${className} ${
+            error ? "!border-2 !border-red-500 focus:!border-red-500" : ""
+          }`}
         />
       )}
     </>

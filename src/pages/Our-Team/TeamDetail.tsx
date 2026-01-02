@@ -2,11 +2,11 @@ import { useParams } from "react-router-dom";
 import { OurTeamText } from "../../constance/Text";
 import Herosection from "../../components/HeroSection";
 import { teambg } from "../../assets/images";
-
 import Contact from "../../components/Contact";
 
 const TeamDetail = () => {
   const { id } = useParams();
+
   const engineer = OurTeamText.engineers.find(
     (item) => item.id === Number(id)
   ) || { name: "", designation: "", image: "" };

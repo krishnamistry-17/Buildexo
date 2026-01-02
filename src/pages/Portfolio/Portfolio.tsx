@@ -1,8 +1,9 @@
+import { Suspense, lazy } from "react";
 import Button from "../../components/Button";
 import Herosection from "../../components/HeroSection";
 import { PortfolioText } from "../../constance/Text";
-import PortfolioTabs from "./PortfolioTabs";
-
+import LoaderComponent from "../../components/Loader";
+const PortfolioTabs = lazy(() => import("./PortfolioTabs"));
 const Portfolio = () => {
   return (
     <>
@@ -35,7 +36,9 @@ const Portfolio = () => {
         ))}
       </div>
       <div className=" justify-center items-center w-full flex lg:mt-0 mt-[30px]">
-        <PortfolioTabs />
+        <Suspense fallback={<LoaderComponent />}>
+          <PortfolioTabs />
+        </Suspense>
       </div>
       <div className="flex justify-center items-center">
         <Button
